@@ -1,0 +1,118 @@
+{
+    "validScopes": [
+        {
+            "hierarchy": [
+                "user",
+                "username"
+            ],
+            "target": "username",
+            "permission": {
+                "read": true,
+                "write": false
+            }
+        },
+        {
+            "hierarchy": [
+                "user",
+                "pfp"
+            ],
+            "target": "pfp",
+            "permission": {
+                "read": true,
+                "write": true
+            }
+        },
+        {
+            "hierarchy" : [
+                "user",
+                "email"
+            ],
+            "target" : "email",
+            "permission" : {
+                "read" : true,
+                "write" : false
+            }
+        }
+    ],
+    
+    "validStringScopes" : [
+        "user:username.read",
+        "user:pfp.read.write",
+        "user:email.read"
+    ],
+
+    "invalidFormatStringScope" : [
+        "user,username",
+        "user:username,read"
+    ],
+    "invalidStringScopes" : [
+        "user:username",
+        "user:username.invalidPermission",
+        "user:invalidResource.read"
+    ],
+
+    "validMultipleStringScope" : "user:username.read user:pfp.read.write user:email.read",
+    "invalidMultipleStringScope" : "hello.world.my.name.is.seungho",
+
+    "unReservedScopes" : [
+        {
+            "hierarchy" : [
+                "doest",
+                "not",
+                "reserved"
+            ],
+            "target": "pfp",
+            "permission": {
+                "write": true,
+                "read": true
+            }
+        },
+        {
+            "hierarchy" : [
+                "user",
+                "doesNotReserved"
+            ],
+            "target": "pfp",
+            "permission": {
+                "write": true,
+                "read": true
+            }
+        }
+    ],
+    
+    "invalidScopes": [
+        {
+            "hierarchy": [
+                "invalidResource",
+                "pfp"
+            ],
+            "target": "pfp",
+            "permission": {
+                "write": true,
+                "read": true
+            }
+        },
+        {
+            "hierarchy": [
+                "user",
+                "invalidResource"
+            ],
+            "target": "invalidResource",
+            "permission": {
+                "write": true,
+                "read": true
+            }
+        },
+        {
+            "hierarchy": [
+                "user",
+                "username"
+            ],
+            "target": "targetDoesnotMatchWithHierarchy",
+            "permission": {
+                "write": true,
+                "read": true
+            }
+        }
+    ]
+}

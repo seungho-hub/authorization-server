@@ -5,11 +5,17 @@ class wwsError extends Error {
   statusText: string;
   originError: Error;
 
-  constructor(status: number, message: string, err?: any) {
+  constructor(status: number, message?: string, err?: any) {
     super(message);
     this.status = status;
     this.statusText = httpStatusCode.getStatusText(status);
-    this.message = message;
+
+    if (!message) {
+      this.message = this.statusText;
+    } else {
+      this.message = message;
+    }
+
     this.originError = err;
   }
 }

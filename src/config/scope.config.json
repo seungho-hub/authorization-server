@@ -1,0 +1,16 @@
+{
+  "user": {
+    "username": {
+      "read" : true,
+      "write" : false
+    },
+    "email": {
+      "read" : true,
+      "write" : false
+    },
+    "pfp": {
+      "read" : true,
+      "write" : false
+    }
+  }
+}
